@@ -2,10 +2,10 @@
 
 [![npm version](https://img.shields.io/npm/v/%40meproto%2Fcbor.svg?logo=npm&color=blue)](https://www.npmjs.com/package/@meproto/cbor)
 [![License](https://img.shields.io/badge/license-Apache--2.0-green)](./LICENSE)
-[![test-cbor](https://img.shields.io/github/actions/workflow/status/meproto/ts/test-cbor.yml?branch=main&label=test-cbor)](https://github.com/meproto/ts/actions/workflows/test-cbor.yml)
+[![tests](https://img.shields.io/github/actions/workflow/status/meproto/ts/test-cbor.yml?branch=main&label=tests)](https://github.com/meproto/ts/actions/workflows/test-cbor.yml)
 [![bundle size](https://badgen.net/bundlephobia/minzip/@meproto/cbor)](https://bundlephobia.com/package/@meproto/cbor)
 
-Canonical DAG-CBOR encoder/decoder and CID helpers for the **ME Protocol** and `did:me`.
+Canonical DAG-CBOR encoder/decoder and CID helpers for the **Me Protocol** and `did:me`.
 
 Implements a safe, deterministic subset of CBOR suitable for decentralized identity, verifiable credentials, content addressing, and protocol-level data structures.
 
@@ -87,7 +87,7 @@ isValidCidString("nope");   // false
 
 ## **What is canonical DAG-CBOR?**
 
-ME Protocol uses a deterministic subset of CBOR with:
+Me Protocol uses a deterministic subset of CBOR with:
 
 - UTF-8 sorted map keys  
 - No floats  
