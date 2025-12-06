@@ -1,0 +1,36 @@
+{
+  "name": "@meproto/ts",
+  "private": true,
+  "license": "Apache-2.0",
+  "engines": {
+    "node": ">=22"
+  },
+  "packageManager": "pnpm@10.24.0",
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "lint": "eslint . --ext .ts",
+    "lint:fix": "pnpm lint --fix",
+    "style": "prettier --check .",
+    "style:fix": "prettier --write .",
+    "verify": "pnpm run lint && pnpm run style && pnpm -r run build",
+    "build": "pnpm -r run build",
+    "clean": "pnpm -r run clean",
+    "test": "pnpm -r run test",
+    "changeset": "changeset",
+    "release": "pnpm build && changeset publish",
+    "version-packages": "changeset version && git add ."
+  },
+  "devDependencies": {
+    "@changesets/cli": "^2.29.8",
+    "@typescript-eslint/eslint-plugin": "^8.48.0",
+    "@typescript-eslint/parser": "^8.48.0",
+    "eslint": "^9.39.1",
+    "prettier": "^3.7.3",
+    "tsup": "^8.5.1",
+    "typescript": "^5.9.3",
+    "vitest": "^4.0.14",
+    "zod": "^4.1.13"
+  }
+}

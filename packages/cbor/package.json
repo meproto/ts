@@ -1,0 +1,58 @@
+{
+  "name": "@meproto/cbor",
+  "version": "0.0.1",
+  "description": "CBOR encoding and decoding utilities for ME Protocol, DID:ME, and credential serialization.",
+  "license": "Apache-2.0",
+  "private": false,
+  "homepage": "https://meprotocol.org",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/meproto/ts.git",
+    "directory": "packages/cbor"
+  },
+  "bugs": {
+    "url": "https://github.com/meproto/ts/issues"
+  },
+  "type": "module",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "files": [
+    "dist/",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "clean": "rm -rf dist",
+    "build": "tsup src/index.ts --dts --format esm --target es2022 --no-splitting",
+    "test": "vitest"
+  },
+  "keywords": [
+    "cbor",
+    "codec",
+    "meproto",
+    "me-protocol",
+    "decentralized-identity",
+    "serialization",
+    "verifiable-credentials",
+    "did",
+    "didme",
+    "ipld"
+  ],
+  "sideEffects": false,
+  "dependencies": {
+    "@ipld/dag-cbor": "^9.2.5",
+    "multiformats": "^13.4.1"
+  },
+  "devDependencies": {
+    "@types/node": "^24.10.1",
+    "tsup": "^8.5.1",
+    "typescript": "^5.9.3",
+    "vitest": "^2.0.0"
+  }
+}
