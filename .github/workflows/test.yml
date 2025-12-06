@@ -12,7 +12,7 @@ jobs:
 
     strategy:
       matrix:
-        node-version: [18, 20, 22]
+        node-version: [20, 22]
 
     steps:
       - uses: actions/checkout@v4
@@ -23,8 +23,15 @@ jobs:
           node-version: ${{ matrix.node-version }}
           cache: "pnpm"
 
-      - name: Enable Corepack (uses pnpm version from package.json)
-        run: corepack enable
+      - name: Enable Corepack + prepare pnpm
+        run: |
+          corepack enable
+          corepack prepare pnpm@${{ steps.pnpm_version.outputs.version }} --activate
+        id: corepack_setup
+
+      - name: Read pnpm version from package.json
+        id: pnpm_version
+        run: echo "version=$(node -p \"require('./package.json').packageManager.split('@')[1]\")" >> $GITHUB_OUTPUT
 
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
