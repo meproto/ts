@@ -1,0 +1,59 @@
+{
+  "name": "@meproto/codec",
+  "version": "0.0.1",
+  "description": "Multibase, multicodec, multikey, base64url, and JSON canonicalization utilities for Me Protocol key encoding, DID parsing, and credential serialization.",
+  "license": "Apache-2.0",
+  "private": false,
+  "homepage": "https://meprotocol.org",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/meproto/ts.git",
+    "directory": "packages/codec"
+  },
+  "bugs": {
+    "url": "https://github.com/meproto/ts/issues"
+  },
+  "type": "module",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "files": [
+    "dist/",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "clean": "rm -rf dist",
+    "build": "tsup src/index.ts --dts --format esm --target es2022 --no-splitting",
+    "test": "vitest"
+  },
+  "keywords": [
+    "codec",
+    "multibase",
+    "base58btc",
+    "base64url",
+    "multicodec",
+    "multikey",
+    "canonical-json",
+    "jcs",
+    "decentralized-identity",
+    "verifiable-credentials",
+    "did",
+    "didme",
+    "meproto",
+    "me-protocol"
+  ],
+  "sideEffects": false,
+  "dependencies": {},
+  "devDependencies": {
+    "@types/node": "^24.10.1",
+    "tsup": "^8.5.1",
+    "typescript": "^5.9.3",
+    "vitest": "^2.0.0"
+  }
+}
