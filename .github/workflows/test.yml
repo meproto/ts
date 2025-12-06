@@ -17,19 +17,12 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 22
-          cache: "pnpm"
-
-      # THIS is the important part:
-      - name: Enable Corepack and prepare pnpm
-        run: |
-          corepack enable
-          corepack prepare pnpm@10.24.0 --activate
 
       - name: Install dependencies
-        run: pnpm install --frozen-lockfile
+        run: npm install
 
       - name: Build cbor package
-        run: pnpm --filter @meproto/cbor build
+        run: npm run --workspace @meproto/cbor build
 
       - name: Test cbor package
-        run: pnpm --filter @meproto/cbor test
+        run: npm run --workspace @meproto/cbor test
