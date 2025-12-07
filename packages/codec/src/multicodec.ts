@@ -29,7 +29,7 @@ export const MULTICODEC_TABLE: Record<string, CodecSpec> = {
   },
 
   "p256-pub": {
-    alg: "ES256",
+    alg: "P-256",
     codec: [0x80, 0x24],   // varint(0x1200)
     keyLength: 33,
   },

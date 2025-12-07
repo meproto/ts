@@ -1,0 +1,28 @@
+{
+  "name": "@meproto/crypto-conformance",
+  "version": "0.0.1",
+  "private": true,
+  "description": "External conformance and invariants test suite for Me Protocol cryptography.",
+  "license": "Apache-2.0",
+  "type": "module",
+
+  "scripts": {
+    "clean": "rm -rf vectors",
+    "generate:vectors": "tsx src/generateVectors.ts",
+    "test": "pnpm run generate:vectors && vitest run",
+    "test:watch": "pnpm run generate:vectors && vitest"
+  },
+
+  "dependencies": {
+    "@meproto/codec": "0.0.3",
+    "@meproto/crypto-primitives": "0.0.2",
+    "@meproto/crypto": "0.0.2"
+  },
+
+  "devDependencies": {
+    "@types/node": "^20.11.0",
+    "typescript": "^5.9.3",
+    "tsx": "^4.7.0",
+    "vitest": "^2.0.0"
+  }
+}

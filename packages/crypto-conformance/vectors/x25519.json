@@ -1,0 +1,13 @@
+{
+  "alg": "X25519",
+  "curve": "X25519",
+  "secretKey": "MiGA1FK94gd_0Df_YgKsrVkRPGms_PgiLSKiNbHLnHw",
+  "publicKey": "5EDEsRfhjPXZeNaIuP1jxVIhU-UXpL4KqIAFYxAkrR4",
+  "jwk": {
+    "kty": "OKP",
+    "crv": "X25519",
+    "x": "5EDEsRfhjPXZeNaIuP1jxVIhU-UXpL4KqIAFYxAkrR4"
+  },
+  "jwkJcs": "{\"crv\":\"X25519\",\"kty\":\"OKP\",\"x\":\"5EDEsRfhjPXZeNaIuP1jxVIhU-UXpL4KqIAFYxAkrR4\"}",
+  "multikey": "z6LSs3BQEyy51GTd7ampAPyYTUBbycv78Ygk2oCcFDXFqutZ"
+}

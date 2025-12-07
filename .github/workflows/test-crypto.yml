@@ -1,0 +1,48 @@
+name: test-crypto
+
+on:
+  push:
+    branches: [main, master]
+  pull_request:
+    branches: [main, master]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Pull repo
+      - uses: actions/checkout@v4
+
+      # Setup Node
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      # Setup pnpm (official supported action)
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v2
+        with:
+          version: 9
+
+      # Cache pnpm store for much faster CI
+      - name: Setup pnpm store cache
+        uses: actions/cache@v4
+        with:
+          path: ~/.pnpm-store
+          key: ${{ runner.os }}-pnpm-store-${{ hashFiles('pnpm-lock.yaml') }}
+          restore-keys: |
+            ${{ runner.os }}-pnpm-store-
+
+      # Install all workspace deps correctly
+      - name: Install dependencies
+        run: pnpm install --no-frozen-lockfile
+
+      # Build only the crypto package (pnpm workspace-aware)
+      - name: Build crypto package
+        run: pnpm --filter @meproto/crypto build
+
+      # Test only the crypto package
+      - name: Test crypto package
+        run: pnpm --filter @meproto/crypto test

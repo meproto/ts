@@ -48,6 +48,7 @@ export {
   parseMultikey,
   validateVMWithMultikey,
   vmTypeMatchesCodec,
+  encodeMultikey,
   type VerificationMethodInput,
   type ParsedMultikey,
 } from "./multikey.js";
