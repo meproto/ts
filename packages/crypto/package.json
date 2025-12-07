@@ -29,7 +29,7 @@
   ],
   "scripts": {
     "clean": "rm -rf dist",
-    "build": "tsup src/index.ts --dts --format esm --target es2022 --no-splitting",
+    "build": "tsup",
     "test": "vitest"
   },
   "keywords": [

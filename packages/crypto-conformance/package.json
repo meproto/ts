@@ -7,6 +7,7 @@
   "type": "module",
   "scripts": {
     "clean": "rm -rf dist vectors",
+    "build": "tsup",
     "generate:vectors": "tsx src/generateVectors.ts",
     "test": "pnpm run generate:vectors && vitest run",
     "test:watch": "pnpm run generate:vectors && vitest"
