@@ -1,11 +1,9 @@
 import { defineConfig } from "tsup";
+import { baseConfig } from "../../tsup.base";
 
 export default defineConfig({
-  entry: ["src/index.ts"], 
-  format: ["esm"],
-  dts: true,
-  splitting: false,
-  target: "es2022",
+  ...baseConfig,
+  entry: ["src/index.ts"],
 
   external: [
     "@noble/curves",
