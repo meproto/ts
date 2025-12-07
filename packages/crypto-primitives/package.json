@@ -1,0 +1,71 @@
+{
+  "name": "@meproto/crypto-primitives",
+  "version": "0.0.2",
+  "description": "Cryptographic primitives for the Me Protocol.",
+  "license": "Apache-2.0",
+  "private": false,
+  "homepage": "https://meprotocol.org",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/meproto/ts.git",
+    "directory": "packages/crypto-primitives"
+  },
+  "bugs": {
+    "url": "https://github.com/meproto/ts/issues"
+  },
+  "type": "module",
+  "main": "dist/index.js",
+  "module": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "files": [
+    "dist/",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "clean": "rm -rf dist",
+    "build": "tsup src/index.ts --dts --format esm --target es2022 --no-splitting",
+    "test": "vitest"
+  },
+  "keywords": [
+    "did",
+    "didme",
+    "meproto",
+    "decentralized-identity",
+    "identity",
+    "pqc",
+    "post-quantum",
+    "pqc-signatures",
+    "mldsa87",
+    "mlkem1024",
+    "ed25519",
+    "x25519",
+    "es256",
+    "w3c",
+    "w3c-did",
+    "did-core",
+    "eu-wallet",
+    "eudi-wallet",
+    "verifiable-credentials",
+    "digital-identity",
+    "cryptography"
+  ],
+  "sideEffects": false,
+  "dependencies": {
+    "@noble/curves": "^2.0.1",
+    "@noble/hashes": "^2.0.1",
+    "@noble/post-quantum": "^0.5.2"
+  },
+  "devDependencies": {
+    "@types/node": "^24.10.1",
+    "tsup": "^8.5.1",
+    "typescript": "^5.9.3",
+    "vitest": "^2.0.0"
+  }
+}

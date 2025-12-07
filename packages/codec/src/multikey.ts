@@ -2,18 +2,26 @@
  * @license Apache-2.0
  * Copyright © 2025 ReallyMe LLC
  *
- * did:me multikey utilities:
+ * Multikey utilities for ME Protocol:
  *   - parse multibase-encoded public keys
  *   - detect multicodec prefix
  *   - strip codec prefix
  *   - validate verificationMethod (VM) entries
+ *   - encode new multikey strings (codec prefix + multibase58btc)
  */
 
-import { multibaseToBytes } from "./multibase.js";
+import { multibaseToBytes, bytesToMultibase58btc } from "./multibase.js";
 import {
   lookupCodecPrefix,
+  MULTICODEC_TABLE,
   type CodecLookupResult,
 } from "./multicodec.js";
+
+//
+// ------------------------------------------------------------
+// Types
+// ------------------------------------------------------------
+//
 
 export interface ParsedMultikey {
   /** “Ed25519”, “ES256”, “ML-DSA-87”, etc */
@@ -32,14 +40,27 @@ export interface ParsedMultikey {
   expectedLength: number;
 }
 
+export interface VerificationMethodInput {
+  type: string;
+  algorithm?: string;
+}
+
+//
+// ------------------------------------------------------------
+// Internal error helper
+// ------------------------------------------------------------
+//
+
 function fail(msg: string): never {
   throw new Error(`multikey: ${msg}`);
 }
 
-/**
- * Map DID verificationMethod.type → allowed multicodec codecName.
- * Extend this table when adding new algorithms.
- */
+//
+// ------------------------------------------------------------
+// VM.type ↔ codecName compatibility
+// ------------------------------------------------------------
+//
+
 export function vmTypeMatchesCodec(vmType: string, codecName: string): boolean {
   switch (vmType) {
     case "Multikey":
@@ -63,18 +84,18 @@ export function vmTypeMatchesCodec(vmType: string, codecName: string): boolean {
   }
 }
 
-/**
- * Parse a multibase-encoded public key of the form:
- *    z<base58btc...> or u<base64url...>
- * Then detect multicodec prefix, strip, validate, and return metadata.
- */
+//
+// ------------------------------------------------------------
+// Decode multikey → raw bytes, codec info, algorithm
+// ------------------------------------------------------------
+//
+
 export function parseMultikey(multibaseKey: string): ParsedMultikey {
   if (typeof multibaseKey !== "string" || multibaseKey.length < 2) {
     fail(`invalid multibase key: "${multibaseKey}"`);
   }
-  //
+
   // 1. Multibase decode
-  //
   let raw: Uint8Array;
   try {
     raw = multibaseToBytes(multibaseKey);
@@ -86,9 +107,7 @@ export function parseMultikey(multibaseKey: string): ParsedMultikey {
     fail(`decoded key too short: length=${raw.length}`);
   }
 
-  //
   // 2. Multicodec prefix detection
-  //
   const info: CodecLookupResult | null = lookupCodecPrefix(raw);
   if (!info) {
     const prefixHex = Array.from(raw.slice(0, 2))
@@ -100,9 +119,7 @@ export function parseMultikey(multibaseKey: string): ParsedMultikey {
   const { name: codecName, alg: algorithm, codec, keyLength } = info;
   const publicKey = raw.slice(codec.length);
 
-  //
   // 3. Key length validation
-  //
   if (publicKey.length !== keyLength) {
     fail(
       `keyLength mismatch for ${codecName}: expected ${keyLength}, got ${publicKey.length}`
@@ -118,29 +135,22 @@ export function parseMultikey(multibaseKey: string): ParsedMultikey {
   };
 }
 
-export interface VerificationMethodInput {
-  type: string;
-  algorithm?: string;
-}
+//
+// ------------------------------------------------------------
+// Validate JSON verificationMethod entry
+// ------------------------------------------------------------
+//
 
-//
-// Validate a JSON verificationMethod entry against parsed multikey
-//
 export function validateVMWithMultikey(
   vm: VerificationMethodInput,
   parsed: ParsedMultikey
 ): void {
-  //
-  // 1. VM.type must be compatible with codec prefix
-  //
   if (!vmTypeMatchesCodec(vm.type, parsed.codecName)) {
     fail(
       `VM.type "${vm.type}" does not match codec "${parsed.codecName}" (alg=${parsed.algorithm})`
     );
   }
-  //
-  // 2. VM.algorithm (if present) must match parsed algorithm exactly
-  //
+
   if (vm.algorithm !== undefined) {
     if (vm.algorithm !== parsed.algorithm) {
       fail(
@@ -148,11 +158,36 @@ export function validateVMWithMultikey(
       );
     }
   } else {
-    // Missing algorithm is only allowed for generic Multikey
     if (vm.type !== "Multikey") {
       fail(
         `VM.algorithm missing but VM.type="${vm.type}" requires an explicit algorithm`
       );
     }
   }
+}
+
+//
+// ------------------------------------------------------------
+// Encode raw public key → multicodec + multibase58btc multikey
+// ------------------------------------------------------------
+//
+
+/**
+ * Encode a raw public key as a multikey string.
+ *
+ * Example:
+ *   encodeMultikey("p256-pub", Uint8Array(33 bytes))
+ *   → "z" + multicodec([0x80,0x24]) + compressedPubKey
+ */
+export function encodeMultikey(
+  codecName: keyof typeof MULTICODEC_TABLE,
+  publicKey: Uint8Array,
+): string {
+  const mc = MULTICODEC_TABLE[codecName];
+  if (!mc) {
+    throw new Error(`encodeMultikey: unknown codec "${codecName}"`);
+  }
+
+  const prefixed = new Uint8Array([...mc.codec, ...publicKey]);
+  return bytesToMultibase58btc(prefixed);
 }

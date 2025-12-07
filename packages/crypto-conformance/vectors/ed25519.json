@@ -1,0 +1,15 @@
+{
+  "alg": "EdDSA",
+  "curve": "Ed25519",
+  "secretKey": "GvpN7qX_lrI8mgn8BLJFreRUGXcQMN9clEB-kDu-rqE",
+  "publicKey": "Ox06O1zL8qAZog-ts27CP0QPjMDXFWqBYmt-70bV2P4",
+  "jwk": {
+    "kty": "OKP",
+    "crv": "Ed25519",
+    "x": "Ox06O1zL8qAZog-ts27CP0QPjMDXFWqBYmt-70bV2P4",
+    "alg": "EdDSA",
+    "use": "sig"
+  },
+  "jwkJcs": "{\"alg\":\"EdDSA\",\"crv\":\"Ed25519\",\"kty\":\"OKP\",\"use\":\"sig\",\"x\":\"Ox06O1zL8qAZog-ts27CP0QPjMDXFWqBYmt-70bV2P4\"}",
+  "multikey": "z6MkiS1wyEkypnpJNETNLTmaLLPbBVBYP91P65EazSxf9VL1"
+}

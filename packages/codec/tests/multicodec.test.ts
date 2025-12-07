@@ -29,4 +29,5 @@ describe("multicodec", () => {
     const val = new Uint8Array([...prefix, ...rest]);
     expect(stripCodecPrefix(val)).toEqual(rest);
   });
+  
 });

@@ -1,0 +1,75 @@
+Here’s what’s missing:
+
+⸻
+
+4️⃣ OpenID4VCI (Credential Issuance Protocol)
+
+This is required by virtually all EUDI-compatible systems.
+
+You need:
+	•	Interaction request builder
+	•	Credential offer parsing
+	•	Token exchange
+	•	Credential retrieval
+	•	Binding to wallet keys
+
+Equivalent to:
+issuerClient = new OpenID4VCI.Issuer(...)
+const credential = await issuerClient.requestCredential({...})
+
+
+
+5️⃣ OpenID4VP / SIOPv2 (Presentation Protocol)
+
+For wallet → verifier communication.
+
+You need:
+	•	Building authorization requests
+	•	Handling redirects
+	•	Responding with signed presentation
+	•	Nonce/challenge support
+	•	JARM-style encapsulation
+
+
+6️⃣ EUDI-specific encoding formats
+
+❗ REQUIRED FOR 2026 COMPLIANCE:
+	•	EUDI JWK-format public keys (JCT)
+	•	JWS-wrapped credentials
+	•	Canonicalized JSON (JCS)
+	•	EU-specific metadata
+	•	Trust framework alignment
+
+You’re already halfway there because you have:
+	•	JCS
+	•	JWS
+	•	P-256 & Ed25519
+	•	Multikey
+
+You just need to expose them in crypto-ops in a structured EU-friendly way.
+
+
+
+7️⃣ Trust Framework Integration
+
+EU wallet developers MUST have:
+	•	Trust list verification
+	•	Certificate chain validation (for issuers)
+	•	Signature-checking against DID or trusted authority
+	•	Trust anchor resolution
+
+This is optional for your base SDK but usually required.
+
+
+
+8️⃣ Key Management Layer
+
+Wallet developers also need:
+	•	Generate P-256 keys
+	•	Generate Ed25519 keys
+	•	Store keys securely
+	•	Recover keys
+	•	Rotate keys
+	•	Export public keys in EU-acceptable formats (JWK, JCT, Multikey)
+
+This is exactly what crypto-ops is for.

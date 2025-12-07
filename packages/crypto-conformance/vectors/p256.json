@@ -1,0 +1,17 @@
+{
+  "alg": "ES256",
+  "curve": "P-256",
+  "secretKey": "RYv75dnlr3h-2Y63vr4-aV_wwgjv9f3CqWAQiLN0jHE",
+  "publicKeyCompressed": "AhrSIcYWsE9BkDeUnIr8qaMuZJzN06AGXxCIrP0PM68b",
+  "publicKeyUncompressed": "BBrSIcYWsE9BkDeUnIr8qaMuZJzN06AGXxCIrP0PM68bMP18Gw-G_0A5aO8sgQaGGIflzcDC_8af7ZIq-BlrwXY",
+  "jwk": {
+    "kty": "EC",
+    "crv": "P-256",
+    "x": "GtIhxhawT0GQN5Scivypoy5knM3ToAZfEIis_Q8zrxs",
+    "y": "MP18Gw-G_0A5aO8sgQaGGIflzcDC_8af7ZIq-BlrwXY",
+    "alg": "ES256",
+    "use": "sig"
+  },
+  "jwkJcs": "{\"alg\":\"ES256\",\"crv\":\"P-256\",\"kty\":\"EC\",\"use\":\"sig\",\"x\":\"GtIhxhawT0GQN5Scivypoy5knM3ToAZfEIis_Q8zrxs\",\"y\":\"MP18Gw-G_0A5aO8sgQaGGIflzcDC_8af7ZIq-BlrwXY\"}",
+  "multikey": "zDnaeSEfVG7NZj1up3EsrmQoyTeSg5a3UxkR3n431nzDxjjTG"
+}
