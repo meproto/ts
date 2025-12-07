@@ -16,6 +16,7 @@
   "type": "module",
   "main": "dist/index.js",
   "module": "dist/index.js",
+  "build": "tsup src/index.ts --dts --format esm --target es2022 --no-splitting",
   "types": "dist/index.d.ts",
   "exports": {
     ".": {
