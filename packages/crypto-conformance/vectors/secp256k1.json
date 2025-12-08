@@ -1,16 +1,16 @@
 {
   "alg": "ES256K",
   "curve": "secp256k1",
-  "secretKey": "fR3L47kLE3pfO0hBNEa6M4w9zWDHjnt8M-fI4mqi9T8",
-  "publicKeyCompressed": "A8-kQs4lNDD2Rmohre0nXD81EIvMsIyFZMsvI1bvKwQU",
+  "secretKey": "jtaVo30N0XrEIgqYKIoMTRzCLhq_R8MXSJorlcmL-I8",
+  "publicKeyCompressed": "AjnVk-WYYQnc_Bqz_hNjTCzz5_FE77Qcp6S_G9jweVQJ",
   "jwk": {
     "kty": "EC",
     "crv": "secp256k1",
-    "x": "z6RCziU0MPZGaiGt7SdcPzUQi8ywjIVkyy8jVu8rBBQ",
-    "y": "Q03mq7kBbRrQd7Pm419hKO8OscCnkmpZflVYCNihuxE",
+    "x": "OdWT5ZhhCdz8GrP-E2NMLPPn8UTvtBynpL8b2PB5VAk",
+    "y": "4OU-qn4laJYrJPJnZxlSn0D5-qYjZ4L04iv-mWeXoSQ",
     "alg": "ES256K",
     "use": "sig"
   },
-  "jwkJcs": "{\"alg\":\"ES256K\",\"crv\":\"secp256k1\",\"kty\":\"EC\",\"use\":\"sig\",\"x\":\"z6RCziU0MPZGaiGt7SdcPzUQi8ywjIVkyy8jVu8rBBQ\",\"y\":\"Q03mq7kBbRrQd7Pm419hKO8OscCnkmpZflVYCNihuxE\"}",
-  "multikey": "zQ3shtceo1ACpxbPEyqjjZHJirDw6iasr2acejSztjayf2zhy"
+  "jwkJcs": "{\"alg\":\"ES256K\",\"crv\":\"secp256k1\",\"kty\":\"EC\",\"use\":\"sig\",\"x\":\"OdWT5ZhhCdz8GrP-E2NMLPPn8UTvtBynpL8b2PB5VAk\",\"y\":\"4OU-qn4laJYrJPJnZxlSn0D5-qYjZ4L04iv-mWeXoSQ\"}",
+  "multikey": "zQ3shRJYtGHrVqovpXZNHxkUZBavXpmmhWEjMHEeW5nP2wzGY"
 }

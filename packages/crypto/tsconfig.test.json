@@ -5,8 +5,5 @@
     "types": ["vitest", "node"],
     "resolveJsonModule": true
   },
-  "include": [
-    "tests/**/*.ts",
-    "src/@types"
-  ]
+  "include": ["tests/**/*.ts"]
 }

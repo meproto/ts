@@ -1,13 +1,13 @@
 {
   "alg": "X25519",
   "curve": "X25519",
-  "secretKey": "MiGA1FK94gd_0Df_YgKsrVkRPGms_PgiLSKiNbHLnHw",
-  "publicKey": "5EDEsRfhjPXZeNaIuP1jxVIhU-UXpL4KqIAFYxAkrR4",
+  "secretKey": "yBo7QPWFd5QEQfClWJJkUfYp87va9CKpMZ5TZpk5or0",
+  "publicKey": "BxZ3esJp8SkKwwORYRxadWhLIV_iHQZNy4MMRBccBFE",
   "jwk": {
     "kty": "OKP",
     "crv": "X25519",
-    "x": "5EDEsRfhjPXZeNaIuP1jxVIhU-UXpL4KqIAFYxAkrR4"
+    "x": "BxZ3esJp8SkKwwORYRxadWhLIV_iHQZNy4MMRBccBFE"
   },
-  "jwkJcs": "{\"crv\":\"X25519\",\"kty\":\"OKP\",\"x\":\"5EDEsRfhjPXZeNaIuP1jxVIhU-UXpL4KqIAFYxAkrR4\"}",
-  "multikey": "z6LSs3BQEyy51GTd7ampAPyYTUBbycv78Ygk2oCcFDXFqutZ"
+  "jwkJcs": "{\"crv\":\"X25519\",\"kty\":\"OKP\",\"x\":\"BxZ3esJp8SkKwwORYRxadWhLIV_iHQZNy4MMRBccBFE\"}",
+  "multikey": "z6LSc9qtVNZmjxV6y7yp98Bwp3grLR4XVvANRVNVrTEUB624"
 }

@@ -1,15 +1,15 @@
 {
   "alg": "EdDSA",
   "curve": "Ed25519",
-  "secretKey": "xo-XpVTxCT-R10jgWVyK3NoqnAOf9Mo-URoX_F7tcwk",
-  "publicKey": "yS-cF0RzGKha9nUYXsO7zvV3lhsrKlggic6blJ2fYpk",
+  "secretKey": "2BLO3muW85uPoZQ-8yLNEwgc6JcXXZia4M-LuYi-F_c",
+  "publicKey": "jpxFaVJ3UncJtPPaq0u0yYjRzJEZ_1n0heQsAIeN4OE",
   "jwk": {
     "kty": "OKP",
     "crv": "Ed25519",
-    "x": "yS-cF0RzGKha9nUYXsO7zvV3lhsrKlggic6blJ2fYpk",
+    "x": "jpxFaVJ3UncJtPPaq0u0yYjRzJEZ_1n0heQsAIeN4OE",
     "alg": "EdDSA",
     "use": "sig"
   },
-  "jwkJcs": "{\"alg\":\"EdDSA\",\"crv\":\"Ed25519\",\"kty\":\"OKP\",\"use\":\"sig\",\"x\":\"yS-cF0RzGKha9nUYXsO7zvV3lhsrKlggic6blJ2fYpk\"}",
-  "multikey": "z6Mkszc6hLtC6DKDJxmsur76RF5qy6kwNBDRRmRAnfxsRz2U"
+  "jwkJcs": "{\"alg\":\"EdDSA\",\"crv\":\"Ed25519\",\"kty\":\"OKP\",\"use\":\"sig\",\"x\":\"jpxFaVJ3UncJtPPaq0u0yYjRzJEZ_1n0heQsAIeN4OE\"}",
+  "multikey": "z6Mkp3x9PsvLt6hhYLbzuz5MZUyEoL6r99SZo16JkdyUHnuN"
 }
