@@ -32,9 +32,12 @@
     "build": "tsup",
     "test": "vitest"
   },
+  
   "tsup": {
-    "entry": ["src/index.ts"]
+    "entry": ["src/index.ts"],
+    "format": ["esm"]
   },
+
   "keywords": [
     "did",
     "didme",
