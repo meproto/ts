@@ -29,15 +29,9 @@
   ],
   "scripts": {
     "clean": "rm -rf dist",
-    "build": "tsup",
+    "build": "tsup src/index.ts --dts --format esm --target es2022 --no-splitting",
     "test": "vitest"
   },
-  
-  "tsup": {
-    "entry": ["src/index.ts"],
-    "format": ["esm"]
-  },
-
   "keywords": [
     "did",
     "didme",

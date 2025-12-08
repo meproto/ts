@@ -1,6 +1,6 @@
 {
   "name": "@meproto/codec",
-  "version": "0.0.3",
+  "version": "0.0.2",
   "description": "Multibase, multicodec, multikey, base64url, and JSON canonicalization utilities for Me Protocol key encoding, DID parsing, and credential serialization.",
   "license": "Apache-2.0",
   "private": false,
