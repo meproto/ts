@@ -32,6 +32,9 @@
     "build": "tsup",
     "test": "vitest"
   },
+  "tsup": {
+    "entry": ["src/index.ts"]
+  },
   "keywords": [
     "did",
     "didme",
