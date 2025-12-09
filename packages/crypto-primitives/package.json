@@ -23,9 +23,13 @@
       "types": "./dist/index.d.ts"
     }
   },
-  "tsup": {
-    "entry": ["src/index.ts"]
-  },
+    "tsup": {
+      "entry": ["src/index.ts"],
+      "external": [
+        "@noble/curves/secp256k1",
+        "@noble/curves"
+      ]
+    },
   "files": [
     "dist/",
     "README.md",
