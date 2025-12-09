@@ -33,22 +33,12 @@
     "test": "vitest"
   },
   "tsup": {
-    "entry": ["src/index.ts"],
-    "format": ["esm"],
-    "dts": true,
-    "splitting": false,
-    "sourcemap": true,
-    "clean": true,
-    "external": [
-      "@meproto/crypto-primitives",
-      "@noble/curves",
-      "@noble/curves/*",
-      "@noble/hashes",
-      "@noble/hashes/*",
-      "@noble/post-quantum",
-      "@noble/post-quantum/*"
-    ]
-  },
+  "entry": ["src/index.ts"],
+  "format": ["esm"],
+  "splitting": false,
+  "sourcemap": true,
+  "clean": true
+},
   "keywords": [
     "did",
     "didme",
