@@ -23,13 +23,21 @@
       "types": "./dist/index.d.ts"
     }
   },
-    "tsup": {
+  "tsup": {
     "entry": ["src/index.ts"],
     "format": ["esm"],
+    "external": [
+      "@noble/curves",
+      "@noble/curves/*",
+      "@noble/hashes",
+      "@noble/hashes/*",
+      "@noble/post-quantum",
+      "@noble/post-quantum/*"
+    ],
+    "dts": true,
     "splitting": false,
-    "sourcemap": true,
     "clean": true,
-    "dts": false
+    "sourcemap": true
   },
   "files": [
     "dist/",
