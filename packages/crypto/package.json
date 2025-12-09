@@ -68,9 +68,6 @@
     "@meproto/cbor": "^0.0.1",
     "@meproto/codec": "^0.0.3",
     "@meproto/crypto-primitives": "^0.0.2",
-    "@noble/curves": "^2.0.1",
-    "@noble/hashes": "^2.0.1",
-    "@noble/post-quantum": "^0.5.2"
   },
   "devDependencies": {
     "@types/node": "^24.10.1",
