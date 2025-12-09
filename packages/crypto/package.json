@@ -38,7 +38,16 @@
     "dts": true,
     "splitting": false,
     "sourcemap": true,
-    "clean": true
+    "clean": true,
+    "external": [
+      "@meproto/crypto-primitives",
+      "@noble/curves",
+      "@noble/curves/*",
+      "@noble/hashes",
+      "@noble/hashes/*",
+      "@noble/post-quantum",
+      "@noble/post-quantum/*"
+    ]
   },
   "keywords": [
     "did",
