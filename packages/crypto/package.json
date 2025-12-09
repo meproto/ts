@@ -29,8 +29,16 @@
   ],
   "scripts": {
     "clean": "rm -rf dist",
-    "build": "tsup src/index.ts --dts --format esm --target es2022 --no-splitting",
+    "build": "tsup",
     "test": "vitest"
+  },
+  "tsup": {
+    "entry": ["src/index.ts"],
+    "format": ["esm"],
+    "dts": true,
+    "splitting": false,
+    "sourcemap": true,
+    "clean": true
   },
   "keywords": [
     "did",
@@ -59,10 +67,7 @@
   "dependencies": {
     "@meproto/cbor": "^0.0.1",
     "@meproto/codec": "^0.0.3",
-    "@meproto/crypto-primitives": "^0.0.2",
-    "@noble/curves": "^2.0.1",
-    "@noble/hashes": "^2.0.1",
-    "@noble/post-quantum": "^0.5.2"
+    "@meproto/crypto-primitives": "^0.0.2"
   },
   "devDependencies": {
     "@types/node": "^24.10.1",
