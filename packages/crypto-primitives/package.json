@@ -23,8 +23,13 @@
       "types": "./dist/index.d.ts"
     }
   },
-  "tsup": {
-    "entry": ["src/index.ts"]
+    "tsup": {
+    "entry": ["src/index.ts"],
+    "format": ["esm"],
+    "splitting": false,
+    "sourcemap": true,
+    "clean": true,
+    "dts": false
   },
   "files": [
     "dist/",
