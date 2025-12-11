@@ -1,6 +1,6 @@
 {
   "name": "@meproto/crypto-primitives",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Cryptographic primitives for the Me Protocol.",
   "license": "Apache-2.0",
   "private": false,

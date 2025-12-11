@@ -56,6 +56,7 @@ export {
   assertSecp256k1PublicKey,
   encodeSecp256k1PublicKey,
   decodeSecp256k1PublicKey,
+  decompressSecp256k1PublicKey,
   type Secp256k1Keypair,
 } from "./secp256k1/index.js";
 

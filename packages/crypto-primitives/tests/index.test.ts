@@ -55,6 +55,7 @@ describe("public API surface", () => {
     expect(typeof secp256k1.assertSecp256k1PublicKey).toBe("function");
     expect(typeof secp256k1.encodeSecp256k1PublicKey).toBe("function");
     expect(typeof secp256k1.decodeSecp256k1PublicKey).toBe("function");
+    expect(typeof secp256k1.decompressSecp256k1PublicKey).toBe("function");
   });
 
   it("includes expected X25519 exports", () => {
