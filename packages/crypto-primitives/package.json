@@ -15,7 +15,6 @@
   },
   "type": "module",
   "main": "dist/index.js",
-  "module": "dist/index.js",
   "types": "dist/index.d.ts",
   "exports": {
     ".": {
@@ -23,13 +22,18 @@
       "types": "./dist/index.d.ts"
     }
   },
-    "tsup": {
-      "entry": ["src/index.ts"],
-      "external": [
-        "@noble/curves/secp256k1",
-        "@noble/curves"
-      ]
-    },
+  "tsup": {
+    "entry": ["src/index.ts"],
+    "external": [
+      "@noble/curves/secp256k1",
+      "@noble/curves"
+    ],
+    "format": ["esm"],
+    "dts": true,
+    "splitting": false,
+    "sourcemap": true,
+    "clean": true
+  },
   "files": [
     "dist/",
     "README.md",
@@ -70,9 +74,6 @@
     "@noble/post-quantum": "^0.5.2"
   },
   "devDependencies": {
-    "@types/node": "^24.10.1",
-    "tsup": "^8.5.1",
-    "typescript": "^5.9.3",
-    "vitest": "^2.0.0"
+    "@types/node": "^24.10.1"
   }
 }

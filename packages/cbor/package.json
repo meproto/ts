@@ -50,9 +50,6 @@
     "multiformats": "^13.4.1"
   },
   "devDependencies": {
-    "@types/node": "^24.10.1",
-    "tsup": "^8.5.1",
-    "typescript": "^5.9.3",
-    "vitest": "^2.0.0"
+    "@types/node": "^24.10.1"
   }
 }
