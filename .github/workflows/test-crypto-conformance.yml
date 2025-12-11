@@ -11,15 +11,34 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      # Pull repo
       - uses: actions/checkout@v4
 
+      # Setup Node
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: 22
 
-      - name: Install dependencies
-        run: npm install
+      # Setup pnpm (must match your repo version)
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v2
+        with:
+          version: 9
 
+      # Cache pnpm store
+      - name: Setup pnpm store cache
+        uses: actions/cache@v4
+        with:
+          path: ~/.pnpm-store
+          key: ${{ runner.os }}-pnpm-store-${{ hashFiles('pnpm-lock.yaml') }}
+          restore-keys: |
+            ${{ runner.os }}-pnpm-store-
+
+      # Install all monorepo dependencies
+      - name: Install dependencies
+        run: pnpm install --no-frozen-lockfile
+
+      # Run conformance tests (no build step required)
       - name: Test crypto-conformance package
-        run: npm run --workspace @meproto/crypto-conformance test
+        run: pnpm --filter @meproto/crypto-conformance test

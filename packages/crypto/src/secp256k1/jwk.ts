@@ -1,5 +1,6 @@
 /**
- * @license Apache-2.0 Copyright © 2025 ReallyMe LLC
+ * @license Apache-2.0 
+ * Copyright © 2025 ReallyMe LLC
  *
  *
  * Produces a JSON Web Key (JWK) of the form:
@@ -21,8 +22,6 @@
 
 import { bytesToBase64Url, canonicalizeJSON } from "@meproto/codec";
 import { decompressSecp256k1PublicKey } from "@meproto/crypto-primitives";
-
-
 
 export interface Secp256k1Jwk {
   kty: "EC";
