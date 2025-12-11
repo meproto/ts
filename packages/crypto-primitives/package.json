@@ -1,6 +1,6 @@
 {
   "name": "@meproto/crypto-primitives",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Cryptographic primitives for the Me Protocol.",
   "license": "Apache-2.0",
   "private": false,
@@ -24,15 +24,14 @@
   },
   "tsup": {
     "entry": ["src/index.ts"],
-    "external": [
-      "@noble/curves/secp256k1",
-      "@noble/curves"
-    ],
     "format": ["esm"],
     "dts": true,
     "splitting": false,
     "sourcemap": true,
-    "clean": true
+    "clean": true,
+    "bundle": true,
+    "treeshake": true,
+    "minify": false
   },
   "files": [
     "dist/",
