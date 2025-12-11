@@ -21,8 +21,5 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      - name: Build crypto-conformance package
-        run: npm run --workspace @meproto/crypto-conformance build
-
       - name: Test crypto-conformance package
         run: npm run --workspace @meproto/crypto-conformance test
